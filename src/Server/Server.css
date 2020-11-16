@@ -21,15 +21,8 @@
         margin: 3px auto;
 }
 
-.Offline{
-    color:red;
-    font-weight: bold;
-}
 
-.Online{
-    color:green;
-    font-weight: bold;
-}
 #trash{
     color:black;
 }
+

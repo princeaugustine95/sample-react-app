@@ -32,3 +32,18 @@
     font-size: 20px;
     cursor:pointer;
 }
+
+.Offline{
+    color:red;
+    font-weight: bold;
+}
+
+.Online{
+    color:green;
+    font-weight: bold;
+}
+
+.Unknown{
+    color:blue;
+    font-weight: bold;
+}

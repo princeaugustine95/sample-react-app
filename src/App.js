@@ -62,7 +62,49 @@ deleteServerHandler=(id)=>{
 
 }
 
+setOnlineHandler=(id)=>{
+
+  const newservers=[...this.state.servers];
+  const server=newservers[id];
+  server.status="Online";
+  this.setState({
+    servers:newservers
+  })
+
+}
+setOfflineHandler=(id)=>{
+  const newservers=[...this.state.servers];
+  const server=newservers[id];
+  server.status="Offline"
+  this.setState({
+    servers:newservers
+  })
+
+}
+setUnknownHandler=(id)=>{
+  const newservers=[...this.state.servers];
+  const server=newservers[id];
+  
+  server.status="Unknown";
+  this.setState({
+    servers:newservers
+  })
+
+}
+
   render() {
+
+    let panels=this.state.servers.map((server,id)=>{
+     return <Panel key={id} name={server.name} status={server.status} 
+     clicked={()=>this.deleteServerHandler(id)}
+     setOnline={this.setOnlineHandler(id)}
+     setOffline={this.setOfflineHandler(id)}
+     setUnknown={this.setUnknownHandler(id)}
+     
+     />
+    })
+
+
     return (
       <div className="App">
         <h1>Server Management</h1>
@@ -72,8 +114,8 @@ deleteServerHandler=(id)=>{
         onSubmit={this.submitHandler}
         />
         <hr/>
-
-        <Panel servers={this.state.servers}  clicked={this.deleteServerHandler} />
+        {panels}
+        
       </div>
     );
   }

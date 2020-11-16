@@ -3,24 +3,44 @@ import './Panel.css';
 
 const Panel=(props)=>{
 
-
+       const  statusColor=()=>{
+            if(props.status==="Online")
+            {
+            return 'Online';
+            }
+            if(props.status==="Offline")
+            {
+                return 'Offline'
+            }
+            if(props.status==="Unknown")
+            {
+                return 'Unknown'
+            }
+           
+        }
  
-    let panels=props.servers.map((server,index)=>{
+    
 
         return (
-        <div key={index} className="container">
+        <div  className="container">
             <div className="panelcont" >
                 <div className="panelhead">
-                    {server.name}
+                    {props.name}
                 </div>
     
                 <div className="panelcontent">
-                       <p> The server status is <span className={server.status==='Offline'?'Offline':'Online'}>{server.status}</span> </p>
+                       <p> The server status is <span className={statusColor()}>{props.status}</span> </p>
                 </div>
     
             </div>
-            <div id="trash" onClick={props.clicked(server.id)}>
+            <div id="trash" onClick={props.clicked}>
             <i className="fa fa-trash-o"></i>
+            </div>
+
+            <div>
+                <button type="button" onClick={props.setOnline}>Set to Online</button>
+                <button type="button" onClick={props.setOffline}>Set to Offline</button>
+                <button type="button" onClick={props.setUnknown}>Set to Unknown</button>
             </div>
 
         </div>
@@ -28,8 +48,8 @@ const Panel=(props)=>{
 
         )
 
-    })
-        return panels
+    
+        
     
 
   
