@@ -1,0 +1,35 @@
+.Server{
+
+    border:2px solid grey;
+    margin:16px auto;
+    padding:2%;
+    box-shadow: 2px 3px 3px grey;
+    text-align: center;
+    width:40%;
+}
+
+.Server label{
+    font-weight: bold;
+    color:black;
+
+}
+
+.Server input[type=text]{
+        border:1px solid black;
+        width:60%;
+        padding:3px auto;
+        margin: 3px auto;
+}
+
+.Offline{
+    color:red;
+    font-weight: bold;
+}
+
+.Online{
+    color:green;
+    font-weight: bold;
+}
+#trash{
+    color:black;
+}
