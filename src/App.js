@@ -97,9 +97,9 @@ setUnknownHandler=(id)=>{
     let panels=this.state.servers.map((server,id)=>{
      return <Panel key={id} name={server.name} status={server.status} 
      clicked={()=>this.deleteServerHandler(id)}
-     setOnline={this.setOnlineHandler(id)}
-     setOffline={this.setOfflineHandler(id)}
-     setUnknown={this.setUnknownHandler(id)}
+     setOnline={()=>this.setOnlineHandler(id)}
+     setOffline={()=>this.setOfflineHandler(id)}
+     setUnknown={()=>this.setUnknownHandler(id)}
      
      />
     })

@@ -26,6 +26,7 @@
     border:2px solid black;
     margin:16px auto;
     align-items: center;
+    flex-wrap:wrap;
 }
 
 #trash{

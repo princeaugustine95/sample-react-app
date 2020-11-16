@@ -36,7 +36,7 @@ const Panel=(props)=>{
             <div id="trash" onClick={props.clicked}>
             <i className="fa fa-trash-o"></i>
             </div>
-
+            <br/>
             <div>
                 <button type="button" onClick={props.setOnline}>Set to Online</button>
                 <button type="button" onClick={props.setOffline}>Set to Offline</button>
